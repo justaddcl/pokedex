@@ -11,6 +11,17 @@
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.4.1"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -20,8 +31,58 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
-    ]
+      "react-app/jest",
+      "airbnb",
+      "plugin:prettier/recommended"
+    ],
+    "env": {
+      "node": true,
+      "browser": true,
+      "es6": true
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaVersion": 2020
+    },
+    "plugins": [
+      "prettier",
+      "react-hooks"
+    ],
+    "rules": {
+      "jsx-a11y/accessible-emoji": 0,
+      "jsx-a11y/anchor-is-valid": [
+        "warn",
+        {
+          "aspects": [
+            "invalidHref"
+          ]
+        }
+      ],
+      "no-unused-expressions": [
+        2,
+        {
+          "allowTaggedTemplates": true
+        }
+      ],
+      "prettier/prettier": [
+        "error",
+        {
+          "trailingComma": "es5",
+          "singleQuote": true,
+          "printWidth": 80
+        }
+      ],
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      ],
+      "react/prop-types": "warn"
+    }
   },
   "browserslist": {
     "production": [
